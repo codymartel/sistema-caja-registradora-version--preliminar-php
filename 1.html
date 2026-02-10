@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nota de Venta / Recibo</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    padding: 20px;
+}
+.nota {
+    max-width: 700px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+.header img {
+    max-width: 120px;
+}
+.header .local-info {
+    text-align: right;
+}
+.tipo-documento {
+    text-align: center;
+    margin: 10px 0;
+    font-weight: bold;
+}
+.cliente-info {
+    margin: 15px 0;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+}
+.cliente-info div {
+    margin: 4px 0;
+}
+.tabla-productos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.tabla-productos th, .tabla-productos td {
+    border: 1px solid #000;
+    padding: 6px;
+    text-align: center;
+}
+.totales {
+    margin-top: 10px;
+    text-align: right;
+}
+.totales div {
+    margin: 3px 0;
+}
+.encargado {
+    margin-top: 15px;
+    border-top: 2px solid #000;
+    padding-top: 10px;
+    font-size: 0.9em;
+}
+@media print {
+    body * { visibility: hidden; }
+    .nota, .nota * { visibility: visible; }
+    .nota { position: absolute; top: 0; left: 0; width: 100%; }
+}
+</style>
+</head>
+<body>
+<div class="nota">
+
+    <!-- Header: Logo + Local -->
+    <div class="header">
+        <img src="logo.png" alt="Logo">
+        <div class="local-info">
+            <div><strong>Nombre del Local</strong></div>
+            <div>RUC: 12345678901</div>
+            <div>Dirección: Calle Ficticia 123</div>
+            <div>Tel: 987654321 / WhatsApp: 987654321</div>
+        </div>
+    </div>
+
+    <!-- Tipo de documento -->
+    <div class="tipo-documento">
+        Contrato | Proforma | Recibo
+    </div>
+
+    <!-- Información del cliente -->
+    <div class="cliente-info">
+        <div><strong>Cliente:</strong> Juan Pérez</div>
+        <div><strong>WhatsApp / Celular:</strong> 987654321</div>
+        <div><strong>Fecha:</strong> 03-11-2025</div>
+        <div><strong>Número de Venta:</strong> 001</div>
+    </div>
+
+    <!-- Tabla de productos/servicios -->
+    <table class="tabla-productos">
+        <thead>
+            <tr>
+                <th>Cantidad</th>
+                <th>Detalle</th>
+                <th>Precio Unitario</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Servicio de reparación</td>
+                <td>S/ 100.00</td>
+                <td>S/ 100.00</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Consumibles</td>
+                <td>S/ 20.00</td>
+                <td>S/ 40.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Totales -->
+    <div class="totales">
+        <div>Subtotal: S/ 140.00</div>
+        <div>IGV 18%: S/ 25.20</div>
+        <div><strong>Total: S/ 165.20</strong></div>
+    </div>
+
+    <!-- Encargado -->
+    <div class="encargado">
+        Encargado: Sr. Carlos López | DNI: 12345678 | RUC: 12345678901
+    </div>
+
+</div>
+</body>
+</html>
